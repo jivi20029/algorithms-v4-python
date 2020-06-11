@@ -35,8 +35,8 @@ def merge(a, lo, mid, hi):
             a[k] = aux[j]
             j += 1
         elif j > hi:
-            a[k] = aux[j]
-            j += 1
+            a[k] = aux[i]
+            i += 1
         elif less(aux[j], aux[i]):
             a[k] = aux[j]
             j += 1
@@ -59,7 +59,7 @@ def sort(a):
 
 
 if __name__ == '__main__':
-    a = [2, 6, 7, 3, 1, 9]
+    a = [2, 6, 7, 3, 1, 9, 10, 12]
     sort(a)
     assert isSorted(a)
     show(a)
