@@ -19,12 +19,15 @@ def isSorted(a):
     return True
 
 
+aux = []
+
+
 def merge(a, lo, mid, hi):
     # print(lo, mid, hi)
     i = lo
     j = mid + 1
-    aux = list(range(len(a)))
 
+    global aux
     for k in range(lo, hi+1):
         aux[k] = a[k]
 
@@ -56,7 +59,8 @@ def merge(a, lo, mid, hi):
 
 def sort(a):
     N = len(a)
-
+    global aux
+    aux = list(range(N))
     sz = 1
     while sz < N:
         for lo in range(0, N-sz, sz+sz):
